@@ -13,9 +13,11 @@ def naive(x, y, z, n):
     return all_permutations
     
     
-def optimized(x, y, z, n):
-    pass
+def list_comprehension(x, y, z, n):
 
+    all_permutations = [[i, j, k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if i + j + k != n ]
+
+    return all_permutations
     
 if __name__ == '__main__':
     x = int(input())
@@ -23,6 +25,6 @@ if __name__ == '__main__':
     z = int(input())
     n = int(input())
     
-    result = naive(x,y,z,n)
+    result = list_comprehension(x,y,z,n)
     
     print(result)
